@@ -19,18 +19,18 @@ class game extends StatefulWidget {
 class _game extends State<game>{
 
 
-  String word;
+  late String word;
   List wordArr = [];
   List wordArr2 = [];
   List green = [];
   List red = [];
   List Noclick = [];
   int wrong = 0;
-  SharedPreferences prefs;
-  int score;
+  late SharedPreferences prefs;
+  late int score;
   int tap = 0;
   int k = 0;
-  int score2;
+  late int score2;
 
 
   @override

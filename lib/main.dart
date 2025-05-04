@@ -37,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int score = 0;
-  SharedPreferences prefs;
+  late SharedPreferences prefs;
 
   @override
   void initState() {
