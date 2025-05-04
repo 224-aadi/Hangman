@@ -70,17 +70,29 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 250,
             ),
             Padding(padding: EdgeInsets.only(top: 120)),
-            RaisedButton(
-              onPressed: (){
-                var _score = 0;
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => loading(score: _score)));
-              },
-              color: Colors.blue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(5))
+            ElevatedButton(
+                onPressed: () {
+                  var _score = 0;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) => loading(score: _score)),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                  ),
+                ),
+                child: Text(
+                  'START',
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
-              child: Text('START', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.white),),
-            ),
             Padding(padding: EdgeInsets.only(top: 15)),
 
             Text('HIGH SCORE:  $score', style: TextStyle(fontSize: 20, color: Colors.white),)

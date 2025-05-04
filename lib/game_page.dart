@@ -5,17 +5,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'loading.dart';
 import 'main.dart';
 
-class game extends StatefulWidget{
+class game extends StatefulWidget {
   final int gamescore;
   final String words;
 
-  game({this.words, this.gamescore});
+  const game({Key? key, required this.words, required this.gamescore}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return _game();
-  }
+  State<StatefulWidget> createState() => _game();
 }
+
 
 class _game extends State<game>{
 
@@ -141,7 +140,12 @@ class _game extends State<game>{
           if(widget.gamescore > score){
             prefs.setInt('score', widget.gamescore);
           }
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => MyHomePage()));
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => MyHomePage(title: 'Hangman'),
+              ),
+            );
         });
         return AlertDialog(
             shape: RoundedRectangleBorder(
@@ -299,7 +303,12 @@ class _game extends State<game>{
                         if(widget.gamescore > score){
                           prefs.setInt('score', widget.gamescore);
                         }
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => MyHomePage()));
+Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(
+    builder: (BuildContext context) => MyHomePage(title: 'Hangman'),
+  ),
+);
                       }),
                 ),
                 Container(

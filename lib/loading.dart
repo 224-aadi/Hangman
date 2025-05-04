@@ -6,15 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:hangman/game_page.dart';
 import 'package:liquid_progress_indicator_ns/liquid_progress_indicator.dart';
 
-class loading extends StatefulWidget{
-    final int score;
+class loading extends StatefulWidget {
+  final int score;
 
-  loading({this.score});
+  const loading({Key? key, required this.score}) : super(key: key);
+
   @override
-  State<StatefulWidget> createState() {
-    return _loading();
-  }
-
+  State<StatefulWidget> createState() => _loading();
 }
 
 class _loading extends State<loading>{
@@ -241,7 +239,7 @@ class _loading extends State<loading>{
   @override
   void initState() {
     element = words[Random().nextInt(words.length)];
-    Timer timer;
+    late Timer timer;
     timer = Timer.periodic(Duration(milliseconds: 50), (_) {
       setState(() {
         percent += 1;
